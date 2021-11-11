@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-12">
-                <h1 class="m-0">Tambah Data Penulis</h1>
+                <h1 class="m-0">Show Data Penulis</h1>
             </div>
         </div>
     </div>
@@ -18,22 +18,13 @@
             <div class="card">
                 <div class="card-header">Data Penulis</div>
                 <div class="card-body">
-                    <form action="{{route('author.store')}}" method="post">
-                        @csrf
                         <div class="form-group">
                             <label for="">Masukan Nama Penulis</label>
-                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror">
-                            @error('name')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{$message}}</strong>
-                            </span>
-                            @enderror
+                            <input type="text" name="name" value="{{$author->name}}" class="form-control" readonly>
                         </div>
                         <div class="form-group">
-                            <button type="reset" class="btn btn-outline-warning">Reset</button>
-                            <button type="submit" class="btn btn-outline-primary">Simpan</button>
+                            <a href="{{url('admin/author')}}" class="btn btn-block btn-outline-primary">Kembali</a>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
